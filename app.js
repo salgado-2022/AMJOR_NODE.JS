@@ -113,7 +113,7 @@ app.get('/usuarios',(req,res) =>{
 
 app.get('*',(req,res) =>{
 
-    res.render('404' ,{
+    res.render('home/404' ,{
         nombre:'pagina no encontrada'
     })
 })
