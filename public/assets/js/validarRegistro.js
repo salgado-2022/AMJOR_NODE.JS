@@ -6,13 +6,13 @@ let confirmarContrasena = document.querySelector('#confirmarContrasena').value
 
 if(nombre == "" || correo == "" || contrasena == ""){
     alert('Complete todos los campos del formulario!')
-}else if(contrasena != confirmarContrasena){
+}
+
+if(contrasena != confirmarContrasena){
     alert('Las contraseñas no coinciden!')
 }else{
     alert('Registrado exitosamente!')
 }
-
-
 
 
 }

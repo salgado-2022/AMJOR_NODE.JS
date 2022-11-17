@@ -2,7 +2,7 @@ require('dotenv').config
 const express = require ('express')
 const hbs = require('hbs')
 const app = express()
-const port = process.env.PORT
+const port = 4000
 
 app.use(express.static('public'))
 
@@ -123,8 +123,6 @@ app.get('*',(req,res) =>{
         nombre:'pagina no encontrada'
     })
 })
-
-
 
 app.listen(port,() =>{
     console.log(`escuchando por el puerto http://localhost:${port}`)

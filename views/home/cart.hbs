@@ -67,10 +67,14 @@
                                                 </div>
                                             </div>
 
+
+
+
                                         </td>
                                         <td>$49.900</td>
-                                        <td><a href="#" class="btn btn-primary btn-sm icon-pencil"></a></td>
-                                        <td><a href="#" class="btn btn-primary btn-sm">X</a></td>
+                                        <td><button type="button" class="btn btn-primary icon-edit" data-toggle="modal"
+                                                data-target=".bd-example-modal-lg"></button></td>
+                                        <td><a href="#" class="btn btn-primary btn-sm icon-trash"></a></td>
                                         <!-- <td><a href="#" class="btn btn-primary btn-sm icon-pencil"></a> <a href="#" class="btn btn-primary btn-sm">X</a></td> -->
                                         <!-- <td><a href="#" class="btn btn-primary btn-sm">X</a></td> -->
                                     </tr>
@@ -100,8 +104,9 @@
 
                                         </td>
                                         <td>$55.000</td>
-                                        <td><a href="#" class="btn btn-primary btn-sm icon-pencil"></a></td>
-                                        <td><a href="#" class="btn btn-primary btn-sm">X</a></td>
+                                        <td><button type="button" class="btn btn-primary icon-edit" data-toggle="modal"
+                                                data-target=".bd-example-modal-lg"></button></td>
+                                        <td><a href="#" class="btn btn-primary btn-sm icon-trash"></a></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -173,14 +178,10 @@
             </div>
         </div>
 
-        <!-- Large modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Abrir modal
-            -
-            pruebas</button>
 
         <!-- Large modal -->
         <div class="modal fade bd-example-modal-lg" id="modalInsumos" tabindex="-1" role="dialog"
-            aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            aria-labelledby="myLargeModalLabel" aria-hidden="true" style="!important;">
             <div class="modal-dialog modal-lg modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -190,180 +191,140 @@
                         </button>
                     </div>
                     <div class="modal-body">
-
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Nombre Insumo</th>
-                                    <th scope="col">Cantidad</th>
-                                    <th scope="col">Precio</th>
-                                    <th scope="col"></th>
-                                </tr>
-                            </thead>
-                            <tbody class="table-group-divider">
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>5</td>
-                                    <td>50.000</td>
-                                    <td><a href="#" class="icon-remove"></a></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-
-                                    <td>4</td>
-                                    <td>50.000</td>
-                                    <td><a href="#" class="icon-remove"></a></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>3</td>
-                                    <td>50.000</td>
-
-                                    <td><a href="#" class="icon-remove"></a></td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <div class="site-section">
-                            <div class="container">
-                                <div class="row mb-5">
-                                    <div class="col-md-12">
-                                        <div class="border p-4 rounded" role="alert">
-                                            ¿Tienes una cuenta? <a href="#">Click aquí</a> para iniciar sesión
-                                        </div>
+                        <div class="container">
+                            <div class="row mb-5">
+                                <div class="col-md-12">
+                                    <div class="border p-4 rounded" role="alert">
+                                        Aquí puedes modificar una ancheta predeterminada a tu gusto. Agrega, elimina, o
+                                        cambia la cantidad de insumos. Recuerda estar seguro de los cambios que
+                                        realices, ya que después de realizar el solicitar el pedido no se puede hacer
+                                        ningún cambio.
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-6 mb-5 mb-md-0">
-                                        <h2 class="h3 mb-3 text-black">Información</h2>
-                                        <div class="p-3 p-lg-5 border">
-                                            <div class="form-group">
-                                                <label for="c_country" class="text-black">País de residencia <span
-                                                        class="text-danger">*</span></label>
-                                                <select id="c_country" class="form-control">
-                                                    <option value="1">Colombia</option>
-                                                    <!-- 
-                  <option value="1">Selecciona un país</option>
-
-                  <option value="2">bangladesh</option>
-                  <option value="3">Algeria</option>
-                  <option value="4">Afghanistan</option>
-                  <option value="5">Ghana</option>
-                  <option value="6">Albania</option>
-                  <option value="7">Bahrain</option>
-                  <option value="9">Dominican Republic</option> -->
-                                                </select>
-                                            </div>
-                                            <div class="form-group row">
-                                                <div class="col-md-6">
-                                                    <label for="c_fname" class="text-black">Nombres <span
-                                                            class="text-danger">*</span></label>
-                                                    <input type="text" class="form-control" id="c_fname" name="c_fname">
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <label for="c_lname" class="text-black">Apellidos <span
-                                                            class="text-danger">*</span></label>
-                                                    <input type="text" class="form-control" id="c_lname" name="c_lname">
-                                                </div>
-                                            </div>
-                                            <!-- 
-              <div class="form-group row">
-                <div class="col-md-12">
-                  <label for="c_companyname" class="text-black">Company Name </label>
-                  <input type="text" class="form-control" id="c_companyname" name="c_companyname">
-                </div>
-              </div>
-              -->
-                                            <div class="form-group row">
-                                                <div class="col-md-12">
-                                                    <label for="c_address" class="text-black">Dirección de entrega <span
-                                                            class="text-danger">*</span></label>
-                                                    <input type="text" class="form-control" id="c_address"
-                                                        name="c_address"
-                                                        placeholder="Dirección donde se entregará el pedido">
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <input type="text" class="form-control"
-                                                    placeholder="Apartamento, suite, torre etc. (opcional)">
-                                            </div>
-
-                                            <div class="form-group row">
-                                                <div class="col-md-6">
-                                                    <label for="c_state_country" class="text-black">Municipio <span
-                                                            class="text-danger">*</span></label>
-                                                    <input type="text" class="form-control" id="c_state_country"
-                                                        name="c_state_country">
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <label for="c_postal_zip" class="text-black">Barrio <span
-                                                            class="text-danger">*</span></label>
-                                                    <input type="text" class="form-control" id="c_postal_zip"
-                                                        name="c_postal_zip">
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group row mb-5">
-                                                <div class="col-md-6">
-                                                    <label for="c_email_address" class="text-black">Correo electrónico
-                                                        <span class="text-danger">*</span></label>
-                                                    <input type="text" class="form-control" id="c_email_address"
-                                                        name="c_email_address" placeholder="tucorreo@gmail.com">
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <label for="c_phone" class="text-black">Celular <span
-                                                            class="text-danger">*</span></label>
-                                                    <input type="text" class="form-control" id="c_phone" name="c_phone"
-                                                        placeholder="Número de celular">
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label for="c_order_notes" class="text-black">Notas adicionales</label>
-                                                <textarea name="c_order_notes" id="c_order_notes" cols="30" rows="5"
-                                                    class="form-control"
-                                                    placeholder="Aquí puedes escribir cualquier información adicional que desees brindarnos..."></textarea>
-                                            </div>
-
-                                        </div>
+                            </div>
+                            <div class="row justify-content-end">
+                                <div class="input-group mb-3 col-4">
+                                    <input type="text" class="form-control" placeholder="Buscar insumo">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline" type="button"><a href="#"
+                                                class="icon-search"></a></button>
                                     </div>
+                                </div>
+                            </div>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Nombre Insumo</th>
+                                        <th score="col">Descripción</th>
+                                        <th scope="col">Precio unitario</th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thead>
+                                <tbody class="table-group-divider">
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Chocolatina</td>
+                                        <td>Descripción del insumo...</td>
+                                        <td>$1.000</td>
+                                        <td><a href="#" class="btn btn-success">+ AGREGAR</a></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Chocolatina JUMBO</td>
+                                        <td>Descripción del insumo...</td>
+                                        <td>$2.500</td>
+                                        <td><a href="#" class="btn btn-success">+ AGREGAR</a></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>Vino Tinto</td>
+                                        <td>Descripción del insumo...</td>
+                                        <td>$1.000</td>
+                                        <td><a href="#" class="btn btn-success">+ AGREGAR</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="site-section">
+                                <div class="container">
+
+                                    <div class="row">
+                                        <div class="col-md-12 mb-5 mb-md-0">
+                                            <h2 class="h3 mb-3 text-black">Insumos de tu ancheta</h2>
+                                            <div class="p-3 p-lg-5 border">
+                                                <table class="table site-block-order-table mb-5">
+                                                    <thead>
+                                                        <th>Producto</th>
+                                                        <th>Precio unidad</th>
+                                                        <th>Cantidad</th>
+                                                        <td></td>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Chocolatina</td>
+                                                            <td>$1.000</td>
+                                                            <td>
+                                                                <div class="input-group mb-3" style="max-width: 120px;">
+                                                                    <div class="input-group-prepend">
+                                                                        <button
+                                                                            class="btn btn-outline-primary js-btn-minus"
+                                                                            type="button">&minus;</button>
+                                                                    </div>
+                                                                    <input type="text" class="form-control text-center"
+                                                                        value="1" placeholder=""
+                                                                        aria-label="Example text with button addon"
+                                                                        aria-describedby="button-addon1">
+                                                                    <div class="input-group-append">
+                                                                        <button
+                                                                            class="btn btn-outline-primary js-btn-plus"
+                                                                            type="button">&plus;</button>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td><a href="#"
+                                                                    class="btn btn-primary btn-sm icon-trash"></a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Vino Tinto</td>
+                                                            <td>$55.000</td>
+                                                            <td>
+                                                                <div class="input-group mb-3" style="max-width: 120px;">
+                                                                    <div class="input-group-prepend">
+                                                                        <button
+                                                                            class="btn btn-outline-primary js-btn-minus"
+                                                                            type="button">&minus;</button>
+                                                                    </div>
+                                                                    <input type="text" class="form-control text-center"
+                                                                        value="1" placeholder=""
+                                                                        aria-label="Example text with button addon"
+                                                                        aria-describedby="button-addon1">
+                                                                    <div class="input-group-append">
+                                                                        <button
+                                                                            class="btn btn-outline-primary js-btn-plus"
+                                                                            type="button">&plus;</button>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td><a href="#"
+                                                                    class="btn btn-primary btn-sm icon-trash"></a>
+                                                            </td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+
+                                            </div>
+                                        </div>
+
+                                        <!-- 
                                     <div class="col-md-6">
                                         <div class="row mb-5">
                                             <div class="col-md-12">
-                                                <h2 class="h3 mb-3 text-black">Tu pedido</h2>
+                                                <h2 class="h3 mb-3 text-black">Insumos</h2>
                                                 <div class="p-3 p-lg-5 border">
-                                                    <table class="table site-block-order-table mb-5">
-                                                        <thead>
-                                                            <th>Producto</th>
-                                                            <th>Total</th>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>Ancheta 1 <strong class="mx-2">x</strong> 1</td>
-                                                                <td>$49.900</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Ancheta 2<strong class="mx-2">x</strong> 1</td>
-                                                                <td>$55.000</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="text-black font-weight-bold">
-                                                                    <strong>Subtotal</strong></td>
-                                                                <td class="text-black">$104.900</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="text-black font-weight-bold">
-                                                                    <strong>Total</strong></td>
-                                                                <td class="text-black font-weight-bold">
-                                                                    <strong>$104.900</strong></td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
+                                                    
 
                                                     <div class="border p-3 mb-3">
                                                         <h3 class="h6 mb-0"><a class="d-block" data-toggle="collapse"
@@ -430,17 +391,18 @@
                                             </div>
                                         </div>
 
+                                    </div> -->
                                     </div>
+                                    <!-- </form> -->
                                 </div>
-                                <!-- </form> -->
                             </div>
+
+
                         </div>
-
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-primary">Guardar cambios</button>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-primary">Guardar cambios</button>
+                        </div>
                     </div>
                 </div>
             </div>
