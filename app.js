@@ -2,7 +2,7 @@ require('dotenv').config
 const express = require ('express')
 const hbs = require('hbs')
 const app = express()
-const port = process.env.PORT
+const port = 4001
 
 app.use(express.static('public'))
 
@@ -113,7 +113,7 @@ app.get('/usuarios',(req,res) =>{
 
 app.get('*',(req,res) =>{
 
-    res.render('404' ,{
+    res.render('home/404' ,{
         nombre:'pagina no encontrada'
     })
 })
