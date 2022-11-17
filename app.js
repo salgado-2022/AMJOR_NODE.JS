@@ -93,9 +93,15 @@ app.get('/pedidos',(req,res) =>{
     })
 })
 
-app.get('/productos',(req,res) =>{
-    res.render('dashboard/productos' ,{
-        nombre:'Pedidos'
+app.get('/anchetas',(req,res) =>{
+    res.render('dashboard/anchetas' ,{
+        nombre:'Anchetas'
+    })
+})
+
+app.get('/insumos',(req,res) =>{
+    res.render('dashboard/insumos' ,{
+        nombre:'Insumos'
     })
 })
 
