@@ -26,13 +26,13 @@ app.get('/contacto', (req,res) =>{
 
 app.get('/login', (req,res) =>{
     
-    res.render('login' ,{
+    res.render('home/login' ,{
         nombre:'Login'
     })
 })
 app.get('/registro', (req,res) =>{
     
-    res.render('registro' ,{
+    res.render('home/registro' ,{
         nombre:'Registrarse'
     })
 })
