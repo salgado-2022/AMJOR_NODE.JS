@@ -111,7 +111,7 @@ input:checked + .slider:before {
                                             placeholder="">
                                     </div>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-5">
                                     <br>
                                     <select class="form-select" aria-label="Default select example">
                                         <option selected>Seleccione un Rol</option>
@@ -120,18 +120,20 @@ input:checked + .slider:before {
                                         <option value="3">Cliente</option>
                                     </select>
                                 </div>
-                                <div class="col-md-4">
-                                    <br>
-                                    <select class="form-select" aria-label="Default select example">
-                                        <option selected>seleccione un permiso asociado a su Rol</option>
-                                        <option value="1">ventas</option>
-                                        <option value="2">catalogo</option>
-                                        <option value="3">historial</option>
-                                    </select>
+                                <div class="col-md-10">
                                     <br>
                                     <div class="form-group row">
                                         <div class="col-md-12">
                                             <label for="c_email" class="text-black">Contraseña <span
+                                                    class="text-danger">*</span></label>
+                                            <input type="password" class="form-control" id="Contra" name="c_contra"
+                                                placeholder="">
+                                                <br>
+                                        </div>
+                                        <div class="col-md-12">
+                                    <div class="form-group row">
+                                        <div class="col-md-12">
+                                            <label for="c_email" class="text-black">Confirmar Contraseña <span
                                                     class="text-danger">*</span></label>
                                             <input type="password" class="form-control" id="Contra" name="c_contra"
                                                 placeholder="">
@@ -148,8 +150,10 @@ input:checked + .slider:before {
                                     <thead>
                                         <tr>
                                             <th scope="col">ID</th>
-                                            <th scope="col">Rol</th>
-                                            <th scope="col">Permisos</th>
+                                            <th scope="col">Nombre</th>
+                                            <th scope="col">Correo</th>
+                                            <th scope="col">Contraseña</th>
+                                            <th scope="col">Estado</th>
                                             <th scope="col">Estado</th>
                                             <th scope="col">Editar</th>
                                             <th scope="col">Eliminar</th>
@@ -157,68 +161,43 @@ input:checked + .slider:before {
                                     </thead>
                                     <tbody>
                             <th scope="row">1</th>
-                            <td>Administrador</td>
-                            <td>Historia de ventas, catalogo, ventas en total</td>
+                            <td>Juan</td>
+                            <td>juanpapas@misena.edu.co</td>
+                            <td>********</td>
+                            <td>Activo</td>
                             <td><label class="switch">
                                     <input type="checkbox">
                                     <span class="slider"></span>
                                 </label></td>
-                                    <figure class="block-4-image">
-                                        <td>
-                                            <button type="button" id="boton">
-                                            <img src="/assets/images/logos/icons8-pencil.gif" width="70" height="40">
-                                            </button>
-                                        </td>
-                                    </figure>
-                                     <figure class="block-4-image">
-                            <td><button type="button" id="boton">
-                                            <img src="/assets/images/logos/icons8-trash.gif" width="70" height="40">
-                                            </button></td>
-                                </figure>
+                                    <td><a href="#" class="icon-check" ></a></td>
+                                    <td><a href="#" class="icon-remove"></a></td>
                         </tr>
                         </tr>
                         <tr>
                             <th scope="row">2</th>
-                            <td>Cliente</td>
-                            <td>historial de compras</td>
+                            <td>Fabian</td>
+                            <td>fabian@calditorico.com</td>
+                            <td>********</td>
+                            <td>Desactivo</td>
                             <td><label class="switch">
                                     <input type="checkbox">
                                     <span class="slider"></span>
                                 </label></td>
-                            <figure class="block-4-image">
-                                        <td>
-                                            <button type="button" id="boton">
-                                            <img src="/assets/images/logos/icons8-pencil.gif" width="70" height="40">
-                                            </button>
-                                        </td>
-                                    </figure>
-                                <figure class="block-4-image">
-                            <td><button type="button" id="boton">
-                                            <img src="/assets/images/logos/icons8-trash.gif" width="70" height="40">
-                                            </button></td>
-                                </figure>
+                           <td><a href="#" class="icon-check" ></a></td>
+                                    <td><a href="#" class="icon-remove"></a></td>
                         </tr>
                         <tr>
                             <th scope="row">3</th>
-                            <td>Empleado</td>
-                            <td>catalogo</td>
+                            <td>Sofia</td>
+                            <td>sofiacarson@gmail.com</td>
+                            <td>********</td>
+                            <td>Activa</td>
                             <td><label class="switch">
                                     <input type="checkbox">
                                     <span class="slider"></span>
                                 </label></td>
-                           <figure class="block-4-image">
-                                        <td>
-                                            
-                                            <button type="button" id="boton">
-                                            <img src="/assets/images/logos/icons8-pencil.gif" width="70" height="40">
-                                            </button>
-                                        </td>
-                                    </figure>
-                             <figure class="block-4-image">
-                            <td><button type="button" id="boton">
-                                            <img src="/assets/images/logos/icons8-trash.gif" width="70" height="40">
-                                            </button></td>
-                                </figure>
+                           <td><a href="#" class="icon-check" ></a></td>
+                           <td><a href="#" class="icon-remove"></a></td>
                         </tr>
                         </tr>
                     </tbody>
