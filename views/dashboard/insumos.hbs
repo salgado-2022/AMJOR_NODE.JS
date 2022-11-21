@@ -78,8 +78,8 @@
                                 <td>Chocolate Jumbo 100 gr</td>
                                 <td>3.000</td>
                                 <td>Disponible</td>
-                                <td><a href="#" class="icon-edit"></a></td>
-                                <td><a href="#" class="icon-trash"></a></td>
+                                <td><a href="#" class="icon-edit" ></a></td>
+                                <td><a href="#" class="icon-trash" data-toggle="modal" data-target="#eliminarAncheta"></a></td>
                             </tr>
                             <tr>
                                 <th scope="row">2</th>
@@ -88,7 +88,7 @@
                                 <td>45.000</td>
                                 <td>Disponible</td>
                                 <td><a href="#" class="icon-edit"></a></td>
-                                <td><a href="#" class="icon-trash"></a></td>
+                                <td><a href="#" class="icon-trash" data-toggle="modal" data-target="#eliminarAncheta"></a></td>
                             </tr>
                             <tr>
                                 <th scope="row">3</th>
@@ -97,7 +97,7 @@
                                 <td>4.500</td>
                                 <td>Agotado</td>
                                 <td><a href="#" class="icon-edit"></a></td>
-                                <td><a href="#" class="icon-trash"></a></td>
+                                <td><a href="#" class="icon-trash" data-toggle="modal" data-target="#eliminarAncheta"></a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -105,6 +105,46 @@
             </div> 
             </div>
         </div>   
+
+                            <!-- Large modal -->
+    <div class="modal fade bd-example-modal-lg" id="eliminarAncheta" tabindex="-1" role="dialog"
+        aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row justify-content-end">
+                        <div class="col-2">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <h2>¿Estás seguro que desea eliminar este insumo?</h2>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <h6>Esta operación es irreversible</h6>
+                    </div>
+                        
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                    <button type="submit" class="btn btn-dark">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/jquery-ui.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/aos.js"></script>
+    <script src="assets/js/insumos.js"></script>
+    <script src="assets/js/main.js"></script> 
+
 
 </body>
 </html>

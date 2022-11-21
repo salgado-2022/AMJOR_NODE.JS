@@ -108,7 +108,7 @@
                                 <td>90.000</td>
                                 <td>Disponible</td>
                                 <td><a href="#" class="icon-edit"></a></td>
-                                <td><a href="#" class="icon-trash"></a></td>
+                                <td><a href="#" class="icon-trash" data-toggle="modal" data-target="#eliminarAncheta"></a></td>
                             </tr>
                             <tr>
                                 <th scope="row">2</th>
@@ -153,6 +153,35 @@
             </div>
         </div> 
 
+                    <!-- Large modal -->
+    <div class="modal fade bd-example-modal-lg" id="eliminarAncheta" tabindex="-1" role="dialog"
+        aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row justify-content-end">
+                        <div class="col-2">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <h2>¿Estás seguro que desea eliminar esta ancheta?</h2>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <h6>Esta operación es irreversible</h6>
+                    </div>
+                        
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                    <button type="submit" class="btn btn-dark">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
         <!-- Large modal -->
     <div class="modal fade bd-example-modal-lg" id="modalInsumos" tabindex="-1" role="dialog"
         aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -169,8 +198,8 @@
                             <ul class="list-group">
                                         <li class="list-group-item">
                                             <div class="row">
-                                                <div class="col-6"><a href="#" class="icon-minus" data-toggle="modal" data-target="#modalInsumos"></a> Chocolate</div>
-                                                <div class="col-6">
+                                                <div class="col"><a href="#" class="icon-minus" data-toggle="modal" data-target="#modalInsumos"></a> Chocolate</div>
+                                                <div class="col-md-auto">
                                                      <div class="input-group" style="max-width: 140px;">
                                                         <div class="input-group-prepend">
                                                             <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
@@ -180,13 +209,16 @@
                                                             <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
                                                         </div>
                                                     </div>
-                                                </div>   
+                                                </div>  
+                                                <div class="col-md-auto">
+                                                    <h5>0$</h5>
+                                                </div>
                                             </div>
                                         </li>
                                         <li class="list-group-item">
                                             <div class="row">
-                                                <div class="col-6"><a href="#" class="icon-minus" data-toggle="modal" data-target="#modalInsumos"></a> Vino</div>
-                                                <div class="col-6">
+                                                <div class="col"><a href="#" class="icon-minus" data-toggle="modal" data-target="#modalInsumos"></a> Vino</div>
+                                                <div class="col-md-auto">
                                                      <div class="input-group" style="max-width: 140px;">
                                                         <div class="input-group-prepend">
                                                             <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
@@ -196,13 +228,16 @@
                                                             <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
                                                         </div>
                                                     </div>
-                                                </div>   
+                                                </div>  
+                                                <div class="col-md-auto">
+                                                    <h5>0$</h5>
+                                                </div>
                                             </div>
                                         </li>
                                         <li class="list-group-item">
                                             <div class="row">
-                                                <div class="col-6"><a href="#" class="icon-minus" data-toggle="modal" data-target="#modalInsumos"></a> Cerveza</div>
-                                                <div class="col-6">
+                                                <div class="col"><a href="#" class="icon-minus" data-toggle="modal" data-target="#modalInsumos"></a> Cerveza</div>
+                                                <div class="col-md-auto">
                                                      <div class="input-group" style="max-width: 140px;">
                                                         <div class="input-group-prepend">
                                                             <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
@@ -212,13 +247,16 @@
                                                             <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
                                                         </div>
                                                     </div>
-                                                </div>   
+                                                </div>  
+                                                <div class="col-md-auto">
+                                                    <h5>0$</h5>
+                                                </div>
                                             </div>
                                         </li>
                                         <li class="list-group-item">
                                             <div class="row">
-                                                <div class="col-6"><a href="#" class="icon-minus" data-toggle="modal" data-target="#modalInsumos"></a> Papas Fritas</div>
-                                                <div class="col-6">
+                                                <div class="col"><a href="#" class="icon-minus" data-toggle="modal" data-target="#modalInsumos"></a> Papas Fritas</div>
+                                                <div class="col-md-auto">
                                                      <div class="input-group" style="max-width: 140px;">
                                                         <div class="input-group-prepend">
                                                             <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
@@ -228,7 +266,10 @@
                                                             <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
                                                         </div>
                                                     </div>
-                                                </div>   
+                                                </div>  
+                                                <div class="col-md-auto">
+                                                    <h5>0$</h5>
+                                                </div>
                                             </div>
                                         </li>
                             </ul>
@@ -250,58 +291,6 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLongTitle">Insumos de la Ancheta</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <h6>Descripcion</h6>
-                    <p>Brujita susto miedo ancheta que miedo tenebroso espeluznantee</p>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">ID</th>
-                                <th scope="col">Insumo</th>
-                                <th scope="col">Cantidad</th>
-                                <th scope="col">Precio</th>
-                            </tr>
-                        </thead>
-                        <tbody class="table-group-divider">
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Chocolate</td>
-                                <td>5</td>
-                                <td>16.000</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Vino</td>
-                                <td>2</td>
-                                <td>100.000</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Cerveza</td>
-                                <td>4</td>
-                                <td>19.000</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                <div class="modal-footer">
-                        <h3>Total:</h3>
-                        <h3>135.000$</h3>
-                </div>
-            </div>
-        </div>
-    </div>
-
-                <!-- Large modal -->
-    <div class="modal fade bd-example-modal-lg" id="eliminarAncheta" tabindex="-1" role="dialog"
-        aria-labelledby="myLargeModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Eliminar Ancheta</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
