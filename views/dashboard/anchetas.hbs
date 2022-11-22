@@ -31,15 +31,15 @@
                     <form>
                         <div class="form-group">
                             <label for="nombreAncheta">Nombre</label>
-                            <input type="text" class="form-control" id="nombreAncheta" required>
+                            <input type="text" class="form-control" id="nombreAncheta">
                         </div>
                         <div class="form-group">
                             <label for="descAncheta">Descripción</label>
-                            <input type="text" class="form-control" id="descAncheta" required>
+                            <input type="text" class="form-control" id="descAncheta">
                         </div>
-                        <div class="d-flex justify-content-start" style="margin-bottom: 7px;">
+                        <div class="d-flex justify-content-start" style="margin-bottom: 12px;">
                             <ul class="list-group">
-                                    <div class="input-group">
+                                <div class="input-group">
                                         <input type="text" class="form-control" placeholder="Buscar Insumo">
                                         <div class="input-group-append">
                                             <button class="btn btn-outline" type="button"><a href="#" class="icon-search"></a></button>
@@ -48,23 +48,78 @@
                                     </div>
                                         <li class="list-group-item">
                                             <div class="row">
-                                                <div class="col-8"><a href="#" class="icon-plus"></a> Chocolate</div>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <div class="row">
-                                                <div class="col-8"><a href="#" class="icon-plus"></a> Vino</div>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <div class="row">
-                                                <div class="col-8"><a href="#" class="icon-plus"></a> Cerveza
+                                                <div class="col"><a href="#" class="icon-plus"></a> Chocolate</div>
+                                                <div class="col-md-auto">
+                                                     <div class="input-group" style="max-width: 140px;">
+                                                        <div class="input-group-prepend">
+                                                            <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
+                                                        </div>
+                                                        <input type="text" class="form-control text-center" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                                                        <div class="input-group-append">
+                                                            <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
+                                                        </div>
+                                                    </div>
+                                                </div>  
+                                                <div class="col-md-auto">
+                                                    <h5>0$</h5>
                                                 </div>
                                             </div>
                                         </li>
                                         <li class="list-group-item">
                                             <div class="row">
-                                                <div class="col-8"><a href="#" class="icon-plus"></a> Papas Fritas</div>
+                                                <div class="col"><a href="#" class="icon-plus"></a> Vino</div>
+                                                <div class="col-md-auto">
+                                                     <div class="input-group" style="max-width: 140px;">
+                                                        <div class="input-group-prepend">
+                                                            <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
+                                                        </div>
+                                                        <input type="text" class="form-control text-center" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                                                        <div class="input-group-append">
+                                                            <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
+                                                        </div>
+                                                    </div>
+                                                </div>  
+                                                <div class="col-md-auto">
+                                                    <h5>0$</h5>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="row">
+                                                <div class="col"><a href="#" class="icon-plus"></a> Cerveza</div>
+                                                <div class="col-md-auto">
+                                                     <div class="input-group" style="max-width: 140px;">
+                                                        <div class="input-group-prepend">
+                                                            <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
+                                                        </div>
+                                                        <input type="text" class="form-control text-center" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                                                        <div class="input-group-append">
+                                                            <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
+                                                        </div>
+                                                    </div>
+                                                </div>  
+                                                <div class="col-md-auto">
+                                                    <h5>0$</h5>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="row">
+                                                <div class="col"><a href="#" class="icon-plus"></a> Papas Fritas</div>
+                                                <div class="col-md-auto">
+                                                     <div class="input-group" style="max-width: 140px;">
+                                                        <div class="input-group-prepend">
+                                                            <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
+                                                        </div>
+                                                        <input type="text" class="form-control text-center" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                                                        <div class="input-group-append">
+                                                            <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
+                                                        </div>
+                                                    </div>
+                                                </div>  
+                                                <div class="col-md-auto">
+                                                    <h5>0$</h5>
+                                                </div>
                                             </div>
                                         </li>
                             </ul>
@@ -198,7 +253,7 @@
                             <ul class="list-group">
                                         <li class="list-group-item">
                                             <div class="row">
-                                                <div class="col"><a href="#" class="icon-minus" data-toggle="modal" data-target="#modalInsumos"></a> Chocolate</div>
+                                                <div class="col"><a href="#" class="icon-minus"></a> Chocolate</div>
                                                 <div class="col-md-auto">
                                                      <div class="input-group" style="max-width: 140px;">
                                                         <div class="input-group-prepend">
@@ -217,7 +272,7 @@
                                         </li>
                                         <li class="list-group-item">
                                             <div class="row">
-                                                <div class="col"><a href="#" class="icon-minus" data-toggle="modal" data-target="#modalInsumos"></a> Vino</div>
+                                                <div class="col"><a href="#" class="icon-minus"></a> Vino</div>
                                                 <div class="col-md-auto">
                                                      <div class="input-group" style="max-width: 140px;">
                                                         <div class="input-group-prepend">
@@ -236,7 +291,7 @@
                                         </li>
                                         <li class="list-group-item">
                                             <div class="row">
-                                                <div class="col"><a href="#" class="icon-minus" data-toggle="modal" data-target="#modalInsumos"></a> Cerveza</div>
+                                                <div class="col"><a href="#" class="icon-minus"></a> Cerveza</div>
                                                 <div class="col-md-auto">
                                                      <div class="input-group" style="max-width: 140px;">
                                                         <div class="input-group-prepend">
@@ -255,7 +310,7 @@
                                         </li>
                                         <li class="list-group-item">
                                             <div class="row">
-                                                <div class="col"><a href="#" class="icon-minus" data-toggle="modal" data-target="#modalInsumos"></a> Papas Fritas</div>
+                                                <div class="col"><a href="#" class="icon-minus"></a> Papas Fritas</div>
                                                 <div class="col-md-auto">
                                                      <div class="input-group" style="max-width: 140px;">
                                                         <div class="input-group-prepend">
@@ -278,7 +333,7 @@
                 <div class="modal-footer">
                         <h3>Total:</h3>
                         <h3>0$</h3>
-                    <button type="button" class="btn btn-primary">Aceptar</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalInsumos">Aceptar</button>
                 </div>
             </div>
         </div>
