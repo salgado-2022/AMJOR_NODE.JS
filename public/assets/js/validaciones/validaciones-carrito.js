@@ -85,7 +85,7 @@ function confirmarRealizarPedido() {
             showConfirmButton: false,
             timer: 1500
         })
-        setTimeout(function(){ window.location = "http://localhost:4000/thankyou"; }, 2000);
+        setTimeout(function(){ window.location = "thankyou"; }, 2000);
         }
       })
 }
