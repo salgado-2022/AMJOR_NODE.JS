@@ -2,7 +2,7 @@ require('dotenv').config
 const express = require ('express')
 const hbs = require('hbs')
 const app = express()
-const port = process.env.PORT
+const port = process.env.PORT || 4000
 
 app.use(express.static('public'))
 
@@ -114,6 +114,24 @@ app.get('/configuracion',(req,res) =>{
 app.get('/usuarios',(req,res) =>{
     res.render('dashboard/usuarios' ,{
         nombre:'usuarios'
+    })
+})
+
+app.get('/ventas',(req,res) =>{
+    res.render('dashboard/ventas' ,{
+        nombre:'ventas'
+    })
+})
+
+app.get('/recuperarContrasena',(req,res) =>{
+    res.render('home/recuperarContrasena' ,{
+        nombre:'recuperarContrasena'
+    })
+})
+
+app.get('/restablecerContrasena',(req,res) =>{
+    res.render('home/restablecerContrasena' ,{
+        nombre:'restablecerContrasena'
     })
 })
 
