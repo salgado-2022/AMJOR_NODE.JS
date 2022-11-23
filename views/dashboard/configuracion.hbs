@@ -4,6 +4,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
+<script src="../../public/assets/js/multiselect-dropdown.js" ></script>
 <head>
     <style>
         .switch {
@@ -117,58 +118,41 @@
             </div>
         </div>
 
+        <div class="container">
+            <form>
+                <h2 class="h3 mb-7 text-black">Crear un nuevo rol y un permiso.</h2>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Nuevo rol.</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <form>
+                    <div class="multiselect">
+                        <div class="selectBox" onclick="showCheckboxes()">
+                        <select class="form-select">
+                            <option>Permisos</option>
+                        </select>
+                        <div class="overSelect"></div>
+                        </div>
+                        <div class="form-check" id="checkboxes">
+                        <label class="form-check-label" for="one">
+                            <input type="checkbox" id="one" />ventas</label>
+                        <label class="form-check-label" for="two">
+                            <input type="checkbox" id="two" />pedidos</label>
+                        <label class="form-check-label" for="three">
+                            <input type="checkbox" id="three" />catalogo</label>
+                        <label class="form-check-label" for="four">
+                            <input type="checkbox" id="four" />domicilios</label>
+                        </div>
+                    </div>
+                </form>
+                <br>
+                <button type="submit" class="btn btn-primary">AGREGAR</button>
+            </form>
+        </div>
+
         <div class="site-section">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-8">
-                        <h2 class="h3 mb-7 text-black">Crear un nuevo Rol y un Permiso</h2>
-                    </div>
-                    <div class="col-md-6">
-                        <br>
-                        <div class="col-md-10">
-                            <label for="c_fname" class="text-black">Ingresa el Rol <span
-                                    class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="formRol" name="c_fidentifi">
-                            <br>
-                            <button type="button" class="btn btn-outline-secondary" id="valiRol">agregar Rol</button>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="multiselect">
-                                <div class="selectBox" onclick="showCheckboxes()">
-                                    <br>
-                                    <form>
-                                        <div class="multiselect" "col-md-6">
-                                            <div class="selectBox" onclick="showCheckboxes()">
-                                                <select class="form-select" id="selectPermisos">
-                                                    <option>Seleccionar un permiso </option>
-                                                </select>
-                                                <div class="overSelect"></div>
-                                            </div>
-                                            <div id="checkboxes">
-                                                <label for="one">
-                                                    <input type="checkbox" id="one" />historial de ventas, editar
-                                                    información, pedidos, catalogo, historial de compras, gestión de
-                                                    usuarios</label>
-                                                <label for="two">
-                                                    <input type="checkbox" id="two" />Catalogo, pedidos, anchetas,
-                                                    domicilios, historial ventas </label>
-                                                <label for="three">
-                                                    <input type="checkbox" id="three" />editar información, historial de
-                                                    compras, catalogo</label>
-                                            </div>
-                                        </div>
-                                    </form>
-                                    <br>
-                                    <button type="button" class="btn btn-outline-secondary" id="valiPermiso">agregar
-                                        permiso</button>
-                                </div>
-                                <br>
-                            </div>
-                        </div>
-                        <div class="col-md-6"><button type="button" class="btn btn-success" id="agregar">+
-                                AGREGAR</button></div>
-                        <br>
-                    </div>
                     <br>
                     <table class="table">
                         <thead>
@@ -351,7 +335,9 @@
                     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
-                    <script>var expanded = false;
+                    <script>
+                    
+                        var expanded = false;
 
                         function showCheckboxes() {
                             var checkboxes = document.getElementById("checkboxes");
@@ -362,7 +348,8 @@
                                 checkboxes.style.display = "none";
                                 expanded = false;
                             }
-                        }</script>
+                        }
+                    </script>
 </body>
 
 </html>
