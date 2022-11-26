@@ -26,7 +26,6 @@ function modificadoCorrectamente() {
         showConfirmButton: false,
         timer: 1500
       })
-    $('#modalInsumos').modal('hide')
 }
 
 function confirmarEliminar() {
