@@ -48,7 +48,7 @@
                                 <tr>
                                     <th scope="row">1</th>
                                     <td>Mark</td>
-                                    <td><a href="#" class=" icon-plus" data-toggle="modal"
+                                    <td><a href="#" class=" icon-eye" data-toggle="modal"
                                             data-target="#modalPedidos"></a></td>
                                     <td>20/12/2022</td>
                                     <td>5</td>
@@ -60,7 +60,7 @@
                                     <th scope="row">1</th>
                                     <td>Mark</td>
 
-                                    <td><a href="#" class=" icon-plus" data-toggle="modal"
+                                    <td><a href="#" class=" icon-eye" data-toggle="modal"
                                             data-target="#modalPedidos"></a></td>
                                     <td>20/12/2022</td>
                                     <td>4</td>
@@ -72,7 +72,7 @@
                                     <th scope="row">1</th>
                                     <td>Mark</td>
 
-                                    <td><a href="#" class=" icon-plus" data-toggle="modal"
+                                    <td><a href="#" class=" icon-eye" data-toggle="modal"
                                             data-target="#modalPedidos"></a></td>
                                     <td>20/12/2022</td>
                                     <td>3</td>
@@ -98,7 +98,7 @@
 
     <!-- Large modal -->
     <div class="modal fade bd-example-modal-lg" id="modalPedidos" tabindex="-1" role="dialog"
-        aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        aria-labelledby="myLargeModalLabel" aria-hidden="true" style="z-index: 2000;">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -123,7 +123,8 @@
                             <tr>
                                 <th scope="row">1</th>
                                 <td>Ancheta Navideña</td>
-                                <td><a href="#" class=" icon-eye" data-toggle="modal" data-target="#modalInsumos"></a>
+                                <td><a href="#" class=" icon-eye" data-toggle="modal" data-target="#modalInsumos"
+                                        data-dismiss="modal"></a>
                                 </td>
 
                                 <td>5</td>
@@ -134,7 +135,8 @@
                                 <th scope="row">1</th>
                                 <td>Mark</td>
 
-                                <td><a href="#" class=" icon-eye" data-toggle="modal" data-target="#modalInsumos"></a>
+                                <td><a href="#" class=" icon-eye" data-toggle="modal" data-target="#modalInsumos"
+                                        data-dismiss="modal"></a>
                                 </td>
 
                                 <td>4</td>
@@ -145,7 +147,8 @@
                                 <th scope="row">1</th>
                                 <td>Mark</td>
 
-                                <td><a href="#" class=" icon-eye" data-toggle="modal" data-target="#modalInsumos"></a>
+                                <td><a href="#" class=" icon-eye" data-toggle="modal" data-target="#modalInsumos"
+                                        data-dismiss="modal"></a>
                                 </td>
 
                                 <td>3</td>
@@ -169,7 +172,7 @@
 
     <!-- Large modal -->
     <div class="modal fade bd-example-modal-lg" id="modalInsumos" tabindex="-1" role="dialog"
-        aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        aria-labelledby="myLargeModalLabel" aria-hidden="true" style="z-index: 2000;">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -195,7 +198,9 @@
                                 <td>Mark</td>
                                 <td>5</td>
                                 <td>50.000</td>
-                                <td><a href="#" class="icon-edit" data-toggle="modal" data-target="#modalModificar" ></a></td>
+                                <td><a href="#" class="icon-edit" data-toggle="modal" data-target="#modalModificar"
+                                        data-dismiss="modal"></a>
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row">1</th>
@@ -203,7 +208,9 @@
 
                                 <td>4</td>
                                 <td>50.000</td>
-                                <td><a href="#" class="icon-edit" data-toggle="modal" data-target="#modalModificar"></a></td>
+                                <td><a href="#" class="icon-edit" data-toggle="modal" data-target="#modalModificar"
+                                        data-dismiss="modal"></a>
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row">1</th>
@@ -211,7 +218,9 @@
                                 <td>3</td>
                                 <td>50.000</td>
 
-                                <td><a href="#" class="icon-edit" data-toggle="modal" data-target="#modalModificar"></a></td>
+                                <td><a href="#" class="icon-edit" data-toggle="modal" data-target="#modalModificar"
+                                        data-dismiss="modal"></a>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -229,7 +238,7 @@
 
     <!-- Large modal -->
     <div class="modal fade bd-example-modal-lg" id="modalModificar" tabindex="-1" role="dialog"
-        aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        aria-labelledby="myLargeModalLabel" aria-hidden="true" style="z-index: 2000;">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -239,96 +248,97 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                                            <div class="d-flex justify-content-center">
-                            <ul class="list-group">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Buscar Insumo">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-outline" type="button"><a href="#" class="icon-search"></a></button>
-                                        </div>
-                                    </div>
-                                <li class="list-group-item mt-2">
-                                    <div class="row">
-                                        <div class="col-4">Chocolate</div>
-                                        <div class="col-6">
-                                            <div class="input-group">
-                                                <span class="input-group-btn">
-                                                    <button type="button" class="btn btn-outline">
-                                                        <span class="icon-minus"></span>
-                                                    </button>
-                                                </span>
-                                                <input type="text" class="form-control input-number" value="3" min="1" max="100">
-                                                <span class="input-group-btn">
-                                                    <button type="button" class="btn btn-outline">
-                                                        <span class="icon-plus"></span>
-                                                    </button>
-                                                </span>
+                    <div class="d-flex justify-content-center">
+                        <ul class="list-group">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Buscar Insumo">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline" type="button"><a href="#"
+                                            class="icon-search"></a></button>
+                                </div>
+                            </div>
+                            <li class="list-group-item mt-2">
+                                <div class="row">
+                                    <div class="col-4">Chocolate</div>
+                                    <div class="col-md-auto">
+                                        <div class="input-group" style="max-width: 140px;">
+                                            <div class="input-group-prepend">
+                                                <button class="btn btn-outline-primary js-btn-minus"
+                                                    type="button">&minus;</button>
+                                            </div>
+                                            <input type="text" class="form-control text-center" value="1" placeholder=""
+                                                aria-label="Example text with button addon"
+                                                aria-describedby="button-addon1">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-outline-primary js-btn-plus"
+                                                    type="button">&plus;</button>
                                             </div>
                                         </div>
                                     </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="row">
-                                        <div class="col-4">Vino</div>
-                                        <div class="col-6">
-                                            <div class="input-group">
-                                                <span class="input-group-btn">
-                                                    <button type="button" class="btn btn-outline">
-                                                        <span class="icon-minus"></span>
-                                                    </button>
-                                                </span>
-                                                <input type="text" class="form-control input-number" value="1" min="1" max="100">
-                                                <span class="input-group-btn">
-                                                    <button type="button" class="btn btn-outline">
-                                                        <span class="icon-plus"></span>
-                                                    </button>
-                                                </span>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div class="col-4">Vino</div>
+                                    <div class="col-md-auto">
+                                        <div class="input-group" style="max-width: 140px;">
+                                            <div class="input-group-prepend">
+                                                <button class="btn btn-outline-primary js-btn-minus"
+                                                    type="button">&minus;</button>
+                                            </div>
+                                            <input type="text" class="form-control text-center" value="1" placeholder=""
+                                                aria-label="Example text with button addon"
+                                                aria-describedby="button-addon1">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-outline-primary js-btn-plus"
+                                                    type="button">&plus;</button>
                                             </div>
                                         </div>
                                     </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="row">
-                                        <div class="col-4">Cerveza</div>
-                                        <div class="col-6">
-                                            <div class="input-group">
-                                                <span class="input-group-btn">
-                                                    <button type="button" class="btn btn-outline">
-                                                        <span class="icon-minus"></span>
-                                                    </button>
-                                                </span>
-                                                <input type="text" class="form-control input-number" value="2" min="1" max="100">
-                                                <span class="input-group-btn">
-                                                    <button type="button" class="btn btn-outline">
-                                                        <span class="icon-plus"></span>
-                                                    </button>
-                                                </span>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div class="col-4">Cerveza</div>
+                                    <div class="col-md-auto">
+                                        <div class="input-group" style="max-width: 140px;">
+                                            <div class="input-group-prepend">
+                                                <button class="btn btn-outline-primary js-btn-minus"
+                                                    type="button">&minus;</button>
+                                            </div>
+                                            <input type="text" class="form-control text-center" value="1" placeholder=""
+                                                aria-label="Example text with button addon"
+                                                aria-describedby="button-addon1">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-outline-primary js-btn-plus"
+                                                    type="button">&plus;</button>
                                             </div>
                                         </div>
                                     </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="row">
-                                        <div class="col-4">Papas Fritas</div>
-                                        <div class="col-6">
-                                            <div class="input-group">
-                                                <span class="input-group-btn">
-                                                    <button type="button" class="btn btn-outline">
-                                                        <span class="icon-minus"></span>
-                                                    </button>
-                                                </span>
-                                                <input type="text" class="form-control input-number" value="2" min="1" max="100">
-                                                <span class="input-group-btn">
-                                                    <button type="button" class="btn btn-outline">
-                                                        <span class="icon-plus"></span>
-                                                    </button>
-                                                </span>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div class="col-4">Papas Fritas</div>
+                                    <div class="col-md-auto">
+                                        <div class="input-group" style="max-width: 140px;">
+                                            <div class="input-group-prepend">
+                                                <button class="btn btn-outline-primary js-btn-minus"
+                                                    type="button">&minus;</button>
+                                            </div>
+                                            <input type="text" class="form-control text-center" value="1" placeholder=""
+                                                aria-label="Example text with button addon"
+                                                aria-describedby="button-addon1">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-outline-primary js-btn-plus"
+                                                    type="button">&plus;</button>
                                             </div>
                                         </div>
                                     </div>
-                                </li>
-                            </ul>
-                        </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
