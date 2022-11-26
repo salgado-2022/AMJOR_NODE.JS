@@ -1,4 +1,3 @@
-
 const validarCheckoutForm = () => {
     let nombres = document.querySelector('#nombres').value
     let apellidos = document.querySelector('#apellidos').value
@@ -16,10 +15,8 @@ const validarCheckoutForm = () => {
     }
 }
 
-
 const boton_realizarPedido = document.querySelector('#boton-realizarPedido')
 boton_realizarPedido.addEventListener('click',validarCheckoutForm)
-
 
 function modificadoCorrectamente() {
     Swal.fire({
