@@ -52,15 +52,26 @@ function confirmarRechazar() {
 
 const validarInsumosModificados = () => {
 
-    var cantidad = document.querySelector('#cantidad').value
-    
-    if (cantidad == 0) {
-        error()
-    }else{
-        insumoModificado()
-    }
+    var valores = $('input[id^=cantidad]').filter(function () {
+        return $(this).val();
+    }).map(function () {
+        var valor = $(this).val();
+        return valor;
+    })
+    for (var i = 0; i<valores.length; i++){
 
+        if(valores[i]==0){
+            error()
+            console.log(valores[i])
+            break
+        }else{
+            insumoModificado()
+            console.log(valores[i])
+        }
+    }
 }
+
+
 
 function error() {
     Swal.fire({
