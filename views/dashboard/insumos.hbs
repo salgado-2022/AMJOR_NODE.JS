@@ -4,11 +4,11 @@
 <head>
 
     {{>head}}
-
+    <link rel="stylesheet" href="assets/css/insumos.css">
 </head>
 
 <body>
-
+    <div id="overlay"></div>
     <div class="site-wrap">
         <header class="site-navbar" role="banner">
             {{>headerDash}}
@@ -26,30 +26,33 @@
         <div class="site-section">
             <div class="container">
             <div class="row">
-                <div class="col-4">
-                    <h2 class="text-black">Crear Insumo</h2>
-                    <form>
+                <div class="col-4" id="crear">
+                    <br>
+                    <h2 class="text-black" id="title">Crear Insumo</h2>
                         <div class="form-group">
                             <label for="nombreInsumo">Nombre</label>
-                            <input type="text" class="form-control" id="nombreInsumo" required>
+                            <input type="text" class="form-control" id="nombreInsumo" >
+                            <p id="nombreInsumoErr">Porfavor ingrese un nombre válido</p>
                         </div>
                         <div class="form-group">
                             <label for="descInsumo">Descripción</label>
-                            <input type="text" class="form-control" id="descInsumo" required>
+                            <input type="text" class="form-control" id="descInsumo">
+                            <p id="descInsumoErr">Porfavor ingrese una descripcion válida</p>
                         </div>
                         <div class="form-group">
                             <label for="precioInsumo">Precio</label>
-                            <input type="text" class="form-control" id="precioInsumo" required>
+                            <input type="text" class="form-control" id="precioInsumo">
+                            <p id="precioInsumoErr">Porfavor ingrese un precio válido</p>
                         </div>
                         <div class="form-check" style="margin-bottom: 7px;">
-                            <input type="checkbox" class="form-check-input" id="estadoAncheta">
-                            <label class="form-check-label" for="estadoAncheta">Disponible</label>
+                            <input type="checkbox" class="form-check-input" id="estadoInsumo">
+                            <label class="form-check-label" for="estadoInsumo">Disponible</label>
                         </div>
-                        <button type="submit" class="btn btn-primary">Crear</button>
-                        <button type="submit" class="btn btn-dark">Cancelar</button>
-                    </form>
+                        <button type="submit" class="btn btn-primary" id="crearInsumo">Crear</button>
+                        <button type="submit" class="btn btn-primary" id="modInsumo" style="display:none; background-color:#d8b4ec; border-color:#d8b4ec" onclick="insumoModificado()">Modificar</button>
+                        <button type="submit" class="btn btn-dark" id="cancelarInsumo">Cancelar</button>
                 </div>
-                <div class="col-8">
+                <div class="col-8" id="styleTablaInsumos">
                     <div class="row justify-content-end">
                         <div class="input-group mb-3 col-6">
                             <input type="text" class="form-control" placeholder="Buscar Insumo">
@@ -78,8 +81,8 @@
                                 <td>Chocolate Jumbo 100 gr</td>
                                 <td>3.000</td>
                                 <td>Disponible</td>
-                                <td><a href="#" class="icon-edit" ></a></td>
-                                <td><a href="#" class="icon-trash" data-toggle="modal" data-target="#eliminarAncheta"></a></td>
+                                <td><a href="#" class="icon-edit" onclick="modificarInsumo()"></a></td>
+                                <td><a href="#" class="icon-trash" onclick="eliminarInsumo()"></a></td>
                             </tr>
                             <tr>
                                 <th scope="row">2</th>
@@ -105,36 +108,6 @@
             </div> 
             </div>
         </div>   
-
-                            <!-- Large modal -->
-    <div class="modal fade bd-example-modal-lg" id="eliminarAncheta" tabindex="-1" role="dialog"
-        aria-labelledby="myLargeModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="row justify-content-end">
-                        <div class="col-2">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-center">
-                        <h2>¿Estás seguro que desea eliminar este insumo?</h2>
-                    </div>
-                    <div class="d-flex justify-content-center">
-                        <h6>Esta operación es irreversible</h6>
-                    </div>
-                        
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-danger">Eliminar</button>
-                    <button type="submit" class="btn btn-dark">Cancelar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <script src="assets/js/jquery-3.3.1.min.js"></script>
     <script src="assets/js/jquery-ui.js"></script>
     <script src="assets/js/popper.min.js"></script>
@@ -143,6 +116,7 @@
     <script src="assets/js/jquery.magnific-popup.min.js"></script>
     <script src="assets/js/aos.js"></script>
     <script src="assets/js/insumos.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="assets/js/main.js"></script> 
 
 
