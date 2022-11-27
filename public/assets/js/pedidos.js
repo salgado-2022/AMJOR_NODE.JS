@@ -16,34 +16,67 @@
 // botonV.addEventListener('click',pedidosV)
 
 
+function aceptadoCorrectamente() {
+    Swal.fire({
+        icon: 'success',
+        title: 'Pedido Aceptado',
+        text: 'Se acepto el pedido correctamente',
+        showConfirmButton: false,
+        timer: 2000
+    })
+}
 
-var data = {
-    items: [
-        {
-            title: "Hello",
-            description: "Hello Text",
-            image: "https://via.placeholder.com/300x100",
-        },
-        {
-            title: "Card title",
-            description: "Some quick example text to build on the card title and make up the bulk of the card's content.<p>Another paragraph</p><p>Another paragraph</p>",
-            image: "https://via.placeholder.com/300x100",
+function confirmarRechazar() {
+    Swal.fire({
+        title: '¿Estás seguro?',
+        text: "Tendras que comunicarte con el cliente ",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Sí, estoy seguro',
+        cancelButtonText: 'Cancelar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Pedido Rechazado',
+                text: 'El pedido fue rechazado correctamente.',
+                showConfirmButton: false,
+                timer: 1500
+            })
         }
-    ]
-};
+    })
+}
 
-var source = document.getElementById("card-template").innerHTML;
-var template = Handlebars.compile(source);
-var html = template(data);
 
-document.getElementById("content").innerHTML = html;
-console.log(html);
+const validarInsumosModificados = () => {
 
-//jquery method
-$("#content .card-footer .btn").on("click", function (event) {
-    console.log("jquery");
+    var cantidad = document.querySelector('#cantidad').value
+    
+    if (cantidad == 0) {
+        error()
+    }else{
+        insumoModificado()
+    }
 
-    var index = $(".card").index(event.currentTarget);
-    console.log("index = " + index);
-    console.log(event.target.dataset.target);
-});
+}
+
+function error() {
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Debes agregar una cantidad superior a 0 en los insumos'
+    })
+}
+
+function insumoModificado() {
+    Swal.fire({
+        icon: 'success',
+        title: 'Modificado exitosamente',
+        text: 'Se modificaron los insumos correctamente',
+        showConfirmButton: false,
+        timer: 2000
+    })
+}
+
