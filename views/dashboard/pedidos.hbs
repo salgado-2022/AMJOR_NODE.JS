@@ -53,8 +53,8 @@
                                     <td>20/12/2022</td>
                                     <td>5</td>
                                     <td>50.000</td>
-                                    <td><a href="#" class="icon-check"></a></td>
-                                    <td><a href="#" class="icon-remove"></a></td>
+                                    <td><a href="#" class="icon-check" onclick="aceptadoCorrectamente()"></a></td>
+                                    <td><a href="#" class="icon-remove" onclick="confirmarRechazar()"></a></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">1</th>
@@ -65,8 +65,8 @@
                                     <td>20/12/2022</td>
                                     <td>4</td>
                                     <td>50.000</td>
-                                    <td><a href="#" class="icon-check"></a></td>
-                                    <td><a href="#" class="icon-remove"></a></td>
+                                    <td><a href="#" class="icon-check" onclick="aceptadoCorrectamente()"></a></td>
+                                    <td><a href="#" class="icon-remove" onclick="confirmarRechazar()"></a></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">1</th>
@@ -77,8 +77,8 @@
                                     <td>20/12/2022</td>
                                     <td>3</td>
                                     <td>50.000</td>
-                                    <td><a href="#" class="icon-check"></a></td>
-                                    <td><a href="#" class="icon-remove"></a></td>
+                                    <td><a href="#" class="icon-check" onclick="aceptadoCorrectamente()"></a></td>
+                                    <td><a href="#" class="icon-remove" onclick="confirmarRechazar()"></a></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -217,7 +217,6 @@
                                 <td>Mark</td>
                                 <td>3</td>
                                 <td>50.000</td>
-
                                 <td><a href="#" class="icon-edit" data-toggle="modal" data-target="#modalModificar"
                                         data-dismiss="modal"></a>
                                 </td>
@@ -259,14 +258,14 @@
                             </div>
                             <li class="list-group-item mt-2">
                                 <div class="row">
-                                    <div class="col-4">Chocolate</div>
+                                    <div class="col"><a href="#" class="icon-remove"></a> Galletas</div>
                                     <div class="col-md-auto">
                                         <div class="input-group" style="max-width: 140px;">
                                             <div class="input-group-prepend">
                                                 <button class="btn btn-outline-primary js-btn-minus"
                                                     type="button">&minus;</button>
                                             </div>
-                                            <input type="text" class="form-control text-center" value="1" placeholder=""
+                                            <input type="number" min="1" class="form-control text-center" disabled id="cantidad" value="1" placeholder=""
                                                 aria-label="Example text with button addon"
                                                 aria-describedby="button-addon1">
                                             <div class="input-group-append">
@@ -279,14 +278,14 @@
                             </li>
                             <li class="list-group-item">
                                 <div class="row">
-                                    <div class="col-4">Vino</div>
+                                    <div class="col"><a href="#" class="icon-remove"></a> Vino</div>
                                     <div class="col-md-auto">
                                         <div class="input-group" style="max-width: 140px;">
                                             <div class="input-group-prepend">
                                                 <button class="btn btn-outline-primary js-btn-minus"
                                                     type="button">&minus;</button>
                                             </div>
-                                            <input type="text" class="form-control text-center" value="1" placeholder=""
+                                            <input type="text" class="form-control text-center" disabled id="cantidad" value="1" placeholder=""
                                                 aria-label="Example text with button addon"
                                                 aria-describedby="button-addon1">
                                             <div class="input-group-append">
@@ -299,14 +298,14 @@
                             </li>
                             <li class="list-group-item">
                                 <div class="row">
-                                    <div class="col-4">Cerveza</div>
+                                    <div class="col"><a href="#" class="icon-remove"></a> Cerveza</div>
                                     <div class="col-md-auto">
                                         <div class="input-group" style="max-width: 140px;">
                                             <div class="input-group-prepend">
                                                 <button class="btn btn-outline-primary js-btn-minus"
                                                     type="button">&minus;</button>
                                             </div>
-                                            <input type="text" class="form-control text-center" value="1" placeholder=""
+                                            <input type="text" class="form-control text-center" disabled id="cantidad" value="1" placeholder=""
                                                 aria-label="Example text with button addon"
                                                 aria-describedby="button-addon1">
                                             <div class="input-group-append">
@@ -319,15 +318,15 @@
                             </li>
                             <li class="list-group-item">
                                 <div class="row">
-                                    <div class="col-4">Papas Fritas</div>
+                                    <div class="col"><a href="#" class="icon-remove"></a> Chocolate</div>
                                     <div class="col-md-auto">
                                         <div class="input-group" style="max-width: 140px;">
                                             <div class="input-group-prepend">
                                                 <button class="btn btn-outline-primary js-btn-minus"
                                                     type="button">&minus;</button>
                                             </div>
-                                            <input type="text" class="form-control text-center" value="1" placeholder=""
-                                                aria-label="Example text with button addon"
+                                            <input type="text" class="form-control text-center" disabled id="cantidad" value="1"
+                                                placeholder="" aria-label="Example text with button addon"
                                                 aria-describedby="button-addon1">
                                             <div class="input-group-append">
                                                 <button class="btn btn-outline-primary js-btn-plus"
@@ -342,7 +341,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary">Modificar</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="validarInsumosModificados()">Modificar</button>
                 </div>
             </div>
         </div>
@@ -359,6 +358,7 @@
     <script src="assets/js/aos.js"></script>
     <script src="assets/js/pedidos.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
 
