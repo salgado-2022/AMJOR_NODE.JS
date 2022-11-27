@@ -4,11 +4,11 @@
 <head>
 
     {{>head}}
-
+    <link rel="stylesheet" href="assets/css/anchetas.css">
 </head>
 
 <body>
-
+    <div id="overlay"></div>
     <div class="site-wrap">
         <header class="site-navbar" role="banner">
             {{>headerDash}}
@@ -26,18 +26,21 @@
         <div class="site-section">
             <div class="container">
                 <div class="row">
-                    <div class="col-4">
-                        <h2 class="text-black">Crear Ancheta</h2>
+                    <div class="col-4" id="crear">
+                        <br>
+                        <h2 class="text-black" id="title">Crear Ancheta</h2>
                         <div class="form-group">
                             <label for="nombreAncheta">Nombre</label>
                             <input type="text" class="form-control" id="nombreAncheta">
+                            <p id="nombreAnchetaErr">Porfavor ingrese un nombre válido</p>
                         </div>
                         <div class="form-group">
                             <label for="descAncheta">Descripción</label>
                             <input type="text" class="form-control" id="descAncheta">
+                            <p id="descAnchetaErr">Porfavor ingrese una descripcion válida</p>
                         </div>
-                        <div class="d-flex justify-content-start" style="margin-bottom: 12px;">
-                            <ul class="list-group">
+                        <div class="d-flex justify-content-start" style="margin-bottom: 12px;" id="insumo">
+                            <ul class="list-group" >
                                 <div class="input-group">
                                     <input type="text" class="form-control" placeholder="Buscar Insumo">
                                     <div class="input-group-append">
@@ -52,20 +55,20 @@
                                         <div class="col-md-auto">
                                             <div class="input-group" style="max-width: 140px;">
                                                 <div class="input-group-prepend">
-                                                    <button class="btn btn-outline-primary js-btn-minus"
-                                                        type="button">&minus;</button>
+                                                    <button class="btn btn-outline-primary js-btn-minus decrease"
+                                                        type="button" id="decrease">&minus;</button>
                                                 </div>
-                                                <input type="text" class="form-control text-center" value="1"
+                                                <input type="text" class="form-control text-center" value="0"
                                                     placeholder="" aria-label="Example text with button addon"
-                                                    aria-describedby="button-addon1">
+                                                    aria-describedby="button-addon1" id="contInsumo">
                                                 <div class="input-group-append">
-                                                    <button class="btn btn-outline-primary js-btn-plus"
+                                                    <button class="btn btn-outline-primary js-btn-plus increment"
                                                         type="button">&plus;</button>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-auto">
-                                            <h5>0$</h5>
+                                            <h5 id="precio">0$</h5>
                                         </div>
                                     </div>
                                 </li>
@@ -75,20 +78,20 @@
                                         <div class="col-md-auto">
                                             <div class="input-group" style="max-width: 140px;">
                                                 <div class="input-group-prepend">
-                                                    <button class="btn btn-outline-primary js-btn-minus"
+                                                    <button class="btn btn-outline-primary js-btn-minus decrease"
                                                         type="button">&minus;</button>
                                                 </div>
-                                                <input type="text" class="form-control text-center" value="1"
+                                                <input type="text" class="form-control text-center" value="0"
                                                     placeholder="" aria-label="Example text with button addon"
                                                     aria-describedby="button-addon1">
                                                 <div class="input-group-append">
-                                                    <button class="btn btn-outline-primary js-btn-plus"
+                                                    <button class="btn btn-outline-primary js-btn-plus increment"
                                                         type="button">&plus;</button>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-auto">
-                                            <h5>0$</h5>
+                                            <h5 id="precio">0$</h5>
                                         </div>
                                     </div>
                                 </li>
@@ -98,20 +101,20 @@
                                         <div class="col-md-auto">
                                             <div class="input-group" style="max-width: 140px;">
                                                 <div class="input-group-prepend">
-                                                    <button class="btn btn-outline-primary js-btn-minus"
+                                                    <button class="btn btn-outline-primary js-btn-minus decrease"
                                                         type="button">&minus;</button>
                                                 </div>
-                                                <input type="text" class="form-control text-center" value="1"
+                                                <input type="text" class="form-control text-center" value="0"
                                                     placeholder="" aria-label="Example text with button addon"
                                                     aria-describedby="button-addon1">
                                                 <div class="input-group-append">
-                                                    <button class="btn btn-outline-primary js-btn-plus"
-                                                        type="button">&plus;</button>
+                                                    <button class="btn btn-outline-primary js-btn-plus increment"
+                                                        type="button" >&plus;</button>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-auto">
-                                            <h5>0$</h5>
+                                            <h5 id="precio">0$</h5>
                                         </div>
                                     </div>
                                 </li>
@@ -121,34 +124,36 @@
                                         <div class="col-md-auto">
                                             <div class="input-group" style="max-width: 140px;">
                                                 <div class="input-group-prepend">
-                                                    <button class="btn btn-outline-primary js-btn-minus"
+                                                    <button class="btn btn-outline-primary js-btn-minus decrease"
                                                         type="button">&minus;</button>
                                                 </div>
-                                                <input type="text" class="form-control text-center" value="1"
+                                                <input type="text" class="form-control text-center" value="0"
                                                     placeholder="" aria-label="Example text with button addon"
                                                     aria-describedby="button-addon1">
                                                 <div class="input-group-append">
-                                                    <button class="btn btn-outline-primary js-btn-plus"
+                                                    <button class="btn btn-outline-primary js-btn-plus increment"
                                                         type="button">&plus;</button>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-auto">
-                                            <h5>0$</h5>
+                                            <h5 id="precio">0$</h5>
                                         </div>
                                     </div>
                                 </li>
                             </ul>
                         </div>
-                        <h5>Total: 0$</h5>
+                        <h5 id="totalAncheta">Total: 0$</h5>
                         <div class="form-check" style="margin-bottom: 7px;">
                             <input type="checkbox" class="form-check-input" id="estadoAncheta">
                             <label class="form-check-label" for="estadoAncheta">Disponible</label>
                         </div>
-                        <button type="submit" class="btn btn-primary" id="botonAncheta">Crear</button>
-                        <button type="submit" class="btn btn-dark">Cancelar</button>
+                        <button type="submit" class="btn btn-primary" id="crearAncheta">Crear</button>
+                        <button type="submit" class="btn btn-primary" id="modAncheta" style="display:none; background-color:#d8b4ec; border-color:#d8b4ec" onclick="anchetaModificada()">Modificar</button>
+                        <button type="submit" class="btn btn-dark" id="cancelarAncheta">Cancelar</button>
                     </div>
-                    <div class="col-8">
+                    <div class="col-8" id="styleTablaAnchetas">
+                        <br>
                         <div class="row justify-content-end">
                             <div class="input-group mb-3 col-6">
                                 <input type="text" class="form-control" placeholder="Buscar Ancheta">
@@ -179,9 +184,8 @@
                                             data-target="#modalAnchetaDetalle"></a></td>
                                     <td>90.000</td>
                                     <td>Disponible</td>
-                                    <td><a href="#" class="icon-edit"></a></td>
-                                    <td><a href="#" class="icon-trash" data-toggle="modal"
-                                            data-target="#eliminarAncheta"></a></td>
+                                    <td><a href="#" class="icon-edit" onclick="modificarAncheta()"></a></td>
+                                    <td><a href="#" class="icon-trash" id="eliminar" onclick="eliminarAncheta()"></a></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">2</th>
@@ -190,9 +194,8 @@
                                             data-target="#modalAnchetaDetalle"></a></td>
                                     <td>135.000</td>
                                     <td>Disponible</td>
-                                    <td><a href="#" class="icon-edit"></a></td>
-                                    <td><a href="#" class="icon-trash" data-toggle="modal"
-                                            data-target="#eliminarAncheta"></a></td>
+                                    <td><a href="#" class="icon-edit" onclick="modificarAncheta()"></a></td>
+                                    <td><a href="#" class="icon-trash" id="eliminar" onclick="eliminarAncheta()"></a></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">3</th>
@@ -201,20 +204,17 @@
                                             data-target="#modalAnchetaDetalle"></a></td>
                                     <td>42.000</td>
                                     <td>Agotado</td>
-                                    <td><a href="#" class="icon-edit"></a></td>
-                                    <td><a href="#" class="icon-trash" data-toggle="modal"
-                                            data-target="#eliminarAncheta"></a></td>
+                                    <td><a href="#" class="icon-edit" onclick="modificarAncheta()"></a></td>
+                                    <td><a href="#" class="icon-trash" id="eliminar" onclick="eliminarAncheta()"></a></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">4</th>
                                     <td>Ancheta Madres</td>
-                                    <td><a href="#" class="icon-eye" data-toggle="modal"
-                                            data-target="#modalAnchetaDetalle"></a></td>
+                                    <td><a href="#" class="icon-eye" id="eliminar" onclick="eliminarAncheta()"></a></td>
                                     <td>42.000</td>
                                     <td>Agotado</td>
-                                    <td><a href="#" class="icon-edit"></a></td>
-                                    <td><a href="#" class="icon-trash" data-toggle="modal"
-                                            data-target="#eliminarAncheta"></a></td>
+                                    <td><a href="#" class="icon-edit" onclick="modificarAncheta()"></a></td>
+                                    <td><a href="#" class="icon-trash" id="eliminar" onclick="eliminarAncheta()"></a></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">5</th>
@@ -223,41 +223,11 @@
                                             data-target="#modalAnchetaDetalle"></a></td>
                                     <td>67.000</td>
                                     <td>Agotado</td>
-                                    <td><a href="#" class="icon-edit"></a></td>
-                                    <td><a href="#" class="icon-trash" data-toggle="modal"
-                                            data-target="#eliminarAncheta"></a></td>
+                                    <td><a href="#" class="icon-edit" onclick="modificarAncheta()"></a></td>
+                                    <td><a href="#" class="icon-trash" id="eliminar" onclick="eliminarAncheta()"></a></td>
                                 </tr>
                             </tbody>
                         </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Large modal -->
-        <div class="modal fade bd-example-modal-lg" id="eliminarAncheta" tabindex="-1" role="dialog"
-            aria-labelledby="myLargeModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <div class="row justify-content-end">
-                            <div class="col-2">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-center">
-                            <h2>¿Estás seguro que desea eliminar esta ancheta?</h2>
-                        </div>
-                        <div class="d-flex justify-content-center">
-                            <h6>Esta operación es irreversible</h6>
-                        </div>
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-danger">Eliminar</button>
-                        <button type="submit" class="btn btn-dark">Cancelar</button>
                     </div>
                 </div>
             </div>
@@ -388,12 +358,12 @@
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLongTitle">Insumos de la Ancheta</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
+                            <span aria-hidden="true">&times;</span> 
                         </button>
                     </div>
                     <div class="modal-body">
                         <h6>Descripcion</h6>
-                        <p>Brujita susto miedo ancheta que miedo tenebroso espeluznantee</p>
+                        <p>Papa noel feliz navidad</p>
                         <table class="table">
                             <thead>
                                 <tr>
