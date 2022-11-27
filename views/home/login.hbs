@@ -15,26 +15,32 @@
         <img src="assets/images/logos/logoblanco.png" alt="">
       </div>
       
-      <form>
+      <form id="form">
         <div class="user-box">
-          <input type="text" name="correo" id="correo" required>
+          <input type="text" name="correo" id="correo" >
           <label>Correo</label>
         </div>
         <div class="user-box">
-          <input type="password" name="pass" id="pass" required>
+          <input type="password" name="pass" id="pass" >
           <label>Contraseña</label>
         </div>
         <center><div>
         
-        <a id="boton">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span> Iniciar </a>
+        <button id="boton" class="btn-neon" type="submit">
+          <span id="span1"></span>
+          <span id="span2"></span>
+          <span id="span3"></span>
+          <span id="span4"></span> Iniciar </button>
+          
           
           <a href="registro" 
           class="switch">Registrate</a>
-                  <a href="/recuperarContrasena" class="hp" >¿Olvidaste tu contraseña?</a> 
+          
+          <a href="/recuperarContrasena" class="hp" >¿Olvidaste tu contraseña?</a> 
+          <p class="warnings" id="warnings" ></p>
+          
+          
+          
         </div></center>
       </form>
     </div>
