@@ -9,6 +9,9 @@ if(nombre == "" || correo == "" || contrasena == ""){
 }else if(contrasena != confirmarContrasena){
     alert('Las contraseñas no coinciden!')
 }
+else{
+    window.location='login'
+}
 
 }
 
