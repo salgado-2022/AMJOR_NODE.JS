@@ -1,0 +1,48 @@
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+input[type=number] { -moz-appearance:textfield; }
+
+#nombresError{
+    color: red;
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: none;
+}
+
+#apellidosError{
+    color: red;
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: none;
+}
+
+#municipioError{
+    color: red;
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: none;
+}
+
+#barrioError{
+    color: red;
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: none;
+}
+
+#correo_electronicoError{
+    color: red;
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: none;
+}
+
+#numero_celularError{
+    color: red;
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: none;
+}

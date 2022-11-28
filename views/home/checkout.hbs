@@ -4,6 +4,7 @@
 <head>
 
   {{>head}}
+  <link rel="stylesheet" href="assets/css/carrito.css">
 
 </head>
 
@@ -60,10 +61,12 @@
                 <div class="col-md-6">
                   <label for="nombres" class="text-black">Nombres <span class="text-danger">*</span></label>
                   <input type="text" class="form-control" id="nombres" name="nombres">
-                </div>
+                	<p id="nombresError">Los nombres solo pueden contener letras.</p>
+					 </div>
                 <div class="col-md-6">
                   <label for="apellidos" class="text-black">Apellidos <span class="text-danger">*</span></label>
                   <input type="text" class="form-control" id="apellidos" name="apellidos">
+						<p id="apellidosError">Los apellidos solo pueden contener letras.</p>
                 </div>
               </div>
               <!-- 
@@ -89,12 +92,27 @@
 
               <div class="form-group row">
                 <div class="col-md-6">
-                  <label for="municipio" class="text-black">Municipio <span class="text-danger">*</span></label>
-                  <input type="text" class="form-control" id="municipio" name="municipio">
-                </div>
+						<label for="municipio" class="text-black">Municipio <span class="text-danger">*</span></label>
+							<select id="municipio" class="form-control">
+								<option value="1">Selecciona un municipio</option>
+
+								<option value="2">Barbosa</option>
+								<option value="3">Bello</option>
+								<option value="4">Caldas</option>
+								<option value="5">Copacabana</option>
+								<option value="6">Envigado</option>
+								<option value="7">Girardota</option>
+								<option value="8">Itagüí</option>
+								<option value="9">La Estrella</option>
+								<option value="10">Medellín</option>
+								<option value="11">Sabaneta</option>
+                		</select>
+						<p id="municipioError">Por favor elija un municipio.</p>
+               </div>
                 <div class="col-md-6">
                   <label for="barrio" class="text-black">Barrio <span class="text-danger">*</span></label>
                   <input type="text" class="form-control" id="barrio" name="barrio">
+						<p id="barrioError">El nombre del barrio solo puede contener letras y números.</p>
                 </div>
               </div>
 
@@ -104,11 +122,14 @@
                       class="text-danger">*</span></label>
                   <input type="text" class="form-control" id="correo_electronico" name="correo_electronico"
                     placeholder="tucorreo@gmail.com">
+						<p id="correo_electronicoError">Por favor ingrese un correo electrónico válido.</p>
                 </div>
                 <div class="col-md-6">
                   <label for="numero_celular" class="text-black">Celular <span class="text-danger">*</span></label>
-                  <input type="text" class="form-control" id="numero_celular" name="numero_celular" placeholder="Número de celular">
-                </div>
+                  <input type="number" class="form-control" id="numero_celular" name="numero_celular" placeholder="Número de celular">
+						<p id="numero_celularError">Por favor ingrese un número de celular válido.</p>
+					 </div>
+					 
               </div>
 
               <div class="form-group">
@@ -224,6 +245,7 @@
 
   <script src="js/main.js"></script>
   <script src="assets/js/validaciones/validaciones-carrito.js"></script>
+  <script src="assets/js/validaciones/validaciones-checkout.js"></script>
 
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
