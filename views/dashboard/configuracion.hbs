@@ -4,6 +4,8 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
+<script src="../../public/assets/js/multiselect-dropdown.js"></script>
+
 <head>
     <style>
         .switch {
@@ -61,6 +63,122 @@
         }
     </style>
 
+    <style>
+        .multiselect {
+            width: 200px;
+        }
+
+        .selectBox {
+            position: relative;
+        }
+
+        .selectBox select {
+            width: 100%;
+            font-weight: bold;
+        }
+
+        .overSelect {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+
+        #checkboxes {
+            display: none;
+            border: 1px #dadada solid;
+        }
+
+        #checkboxes label {
+            display: block;
+        }
+
+        #checkboxes label:hover {
+            background-color: #1e90ff;
+        }
+    </style>
+
+    <!-- estilos de ventana modal editar -->
+
+    <style>
+        .modal-content {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .modal-body {
+            padding: 0;
+        }
+
+        .btn-close {
+            position: absolute;
+            right: 0;
+            padding: 1em;
+        }
+
+        h1 {
+            font-size: 2.3em;
+            font-weight: bold;
+        }
+
+        .myform {
+            padding: 2em;
+            max-width: 100%;
+            color: #fff;
+            box-shadow: 0 4px 6px 0 rgba(22, 22, 26, 0.18);
+        }
+
+        @media (max-width: 576px) {
+            .myform {
+                max-width: 90%;
+                margin: 0 auto;
+            }
+        }
+
+        .form-control:focus {
+            box-shadow: inset 0 -1px 0 #ffffff;
+        }
+
+        .form-control {
+            background-color: inherit;
+            color: #fff;
+            padding-left: 0;
+            border: 0;
+            border-radius: 0;
+            border-bottom: 1px solid #0032FF;
+        }
+
+        .myform .btn {
+            width: 100%;
+            font-weight: 800;
+            background-color: #fff;
+            border-radius: 0;
+            padding: 0.5em 0;
+        }
+
+        .myform .btn:hover {
+            background-color: inherit;
+            color: #fff;
+            border-color: #0032FF;
+        }
+
+        p {
+            text-align: center;
+            padding-top: 2em;
+            color: grey;
+        }
+
+        p a {
+            color: #0032FF;
+            text-decoration: none;
+        }
+
+        p a:hover {
+            color: #0032FF;
+        }
+    </style>
+
     {{>head}}
 
 </head>
@@ -81,173 +199,218 @@
             </div>
         </div>
 
+        <div class="container">
+            <h2 class="h3 mb-7 text-black">Crear un nuevo rol y un permiso.</h2>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Nuevo rol. Recuerda elegir tambien los permisos
+                    asociados al rol ingresado.</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+
+            <div class="multiselect">
+                <div class="selectBox" onclick="showCheckboxes()">
+                    <select class="form-select">
+                        <option>Permisos</option>
+                    </select>
+                    <div class="overSelect"></div>
+                </div>
+                <div class="form-check" id="checkboxes">
+                    <label class="form-check-label" for="one" id="selecta">
+                        <input type="checkbox" id="one" />ventas</label>
+                    <label class="form-check-label" for="two" id="selecta">
+                        <input type="checkbox" id="two" />pedidos</label>
+                    <label class="form-check-label" for="three" id="selecta">
+                        <input type="checkbox" id="three" />catalogo</label>
+                    <label class="form-check-label" for="four" id="selecta">
+                        <input type="checkbox" id="four" />domicilios</label>
+                    <label class="form-check-label" for="five" id="selecta">
+                        <input type="checkbox" id="five" />editar datos</label>
+                </div>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary" id="agregarTodo">AGREGAR</button>
+        </div>
+
         <div class="site-section">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12">
-                        <h2 class="h3 mb-3 text-black">Crear un nuevo Rol y un Permiso</h2>
-                    </div>
-                    <div class="col-md-3">
-                        <br>
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>Seleccione un Rol</option>
-                            <option value="1">Administrador</option>
-                            <option value="2">Empleado</option>
-                            <option value="3">Cliente</option>
-                        </select>
-                        <br>
-                        <button type="button" class="btn btn-outline-secondary">agregar Rol</button>
-                    </div>
-                    <div class="col-md-4">
-                        <br>
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>seleccione un permiso asociado a su Rol</option>
-                            <option value="1">ventas</option>
-                            <option value="2">catalogo</option>
-                            <option value="3">historial</option>
-                        </select>
-                        <br>
-                        <button type="button" class="btn btn-outline-secondary">agregar permiso</button>
-                    </div>
-                    <div class="col-md-5"><button type="button" class="btn btn-success">+ AGREGAR</button></div>
                     <br>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Rol</th>
+                                <th scope="col">Permisos</th>
+                                <th scope="col">Estado</th>
+                                <th scope="col">Estado</th>
+                                <th scope="col">Editar</th>
+                                <th scope="col">Eliminar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <div class="col-12">
+                                <div class="row justify-content-end">
+                                    <div class="input-group mb-3 col-3">
+                                        <input type="text" class="form-control" placeholder="Buscar Rol">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-outline" type="button"><a href="#"
+                                                    class="icon-search"></a></button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Administrador</td>
+                                <td>historial de ventas, editar información, pedidos, catalogo, historial de compras,
+                                    gestión de
+                                    usuarios</td>
+                                <td>Activo</td>
+                                <td><label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider"></span>
+                                    </label></td>
+                                <td><a href="#" class="icon-check" data-toggle="modal" data-target="#modalconfiga"></a>
+                                <td><button type="button" class="btn btn-primary icon-trash"
+                                        onclick="confirmarEliminar()"></button></td>
+                                </td>
+                            </tr>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Cliente</td>
+                                <td>editar información, historial de compras, catalogo</td>
+                                <td>Activo</td>
+                                <td><label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider"></span>
+                                    </label></td>
+                                <td><a href="#" class="icon-check" data-toggle="modal" data-target="#modalconfiga"></a>
+                                <td><button type="button" class="btn btn-primary icon-trash"
+                                        onclick="confirmarEliminar()"></button></td>
+                                </td>
+                            </tr>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Empleado</td>
+                                <td>Catalogo, pedidos, anchetas, domicilios, historial ventas</td>
+                                <td>Desactivo</td>
+                                <td><label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider"></span>
+                                    </label></td>
+                                <td><a href="#" class="icon-check" data-toggle="modal" data-target="#modalconfiga"></a>
+                                <td><button type="button" class="btn btn-primary icon-trash"
+                                        onclick="confirmarEliminar()"></button></td>
+                                </td>
+                            </tr>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-                <br>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Rol</th>
-                            <th scope="col">Permisos</th>
-                            <th scope="col">Estado</th>
-                            <th scope="col">Estado</th>
-                            <th scope="col">Editar</th>
-                            <th scope="col">Eliminar</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Administrador</td>
-                            <td>Historia de ventas, catalogo, ventas en total</td>
-                            <td>Activo</td>
-                            <td><label class="switch">
-                                    <input type="checkbox">
-                                    <span class="slider"></span>
-                                </label></td>
-                            <td><a href="#" class="icon-check" data-toggle="modal" data-target="#modalConfig"></a></td>
-                            <td><a href="#" class="icon-remove"></a></td>
-                        </tr>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Cliente</td>
-                            <td>historial de compras</td>
-                            <td>Activo</td>
-                            <td><label class="switch">
-                                    <input type="checkbox">
-                                    <span class="slider"></span>
-                                </label></td>
-                            <td><a href="#" class="icon-check" data-toggle="modal" data-target="#modalConfig"></a></td>
-                            <td><a href="#" class="icon-remove"></a></td>
-                        </tr>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Empleado</td>
-                            <td>catalogo</td>
-                            <td>Desactivo</td>
-                            <td><label class="switch">
-                                    <input type="checkbox">
-                                    <span class="slider"></span>
-                                </label></td>
-                            <td><a href="#" class="icon-check" data-toggle="modal" data-target="#modalConfig"></a></td>
-                            <td><a href="#" class="icon-remove"></a></td>
-                        </tr>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                <footer class="site-footer border-top">
+                    {{>footer}}
+                </footer>
 
-            <footer class="site-footer border-top">
-                {{>footer}}
-            </footer>
+                <div class="modal fade bd-example-modal-lg" id="modalconfiga" tabindex="-1" role="dialog"
+                    aria-labelledby="myLargeModalLabel" aria-hidden="true" style="!important;">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Modificando un Rol y permiso</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container">
+                                    <div class="row mb-5">
+                                        <div class="col-md-12">
+                                            <div class="border p-4 rounded" role="alert">
+                                                Aqui puedes hacer los cambios de un rol y permiso, debes escribir el Rol
+                                                a modificar y elegir sus permisos.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h2 class="h3 mb-7 text-black">Nuevo rol.</h2>
+                                    <form method="post" action="#">
+                                        <div class="mb-3">
 
-            <!-- Large modal -->
-            <div class="modal fade bd-example-modal-lg" id="modalConfig" tabindex="-1" role="dialog"
-                aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">Editar Rol</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">ID</th>
-                                        <th scope="col">Rol</th>
-                                        <th scope="col">Permisos</th>
-                                        <th scope="col">Estado</th <th scope="col">
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody class="table-group-divider">
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>Seleccione un Rol</option>
-                            <option value="1">Administrador</option>
-                            <option value="2">Empleado</option>
-                            <option value="3">Cliente</option>
-                        </select></td>
-                                        <td>historial de ventas, catalogo, ventas en total, editar información</td>
-                                        <td>Activo</td>
-                                        <td><a href="#" class="icon-check"></a></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td><select class="form-select" aria-label="Default select example">
-                            <option selected>Seleccione un Rol</option>
-                            <option value="1">Administrador</option>
-                            <option value="2">Empleado</option>
-                            <option value="3">Cliente</option>
-                        </select></td>
-                                        <td>historial de ventas, catalogo, editar información</td>
-                                        <td>Activo</td>
-                                        <td><a href="#" class="icon-check"></a></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td><select class="form-select" aria-label="Default select example">
-                            <option selected>Seleccione un Rol</option>
-                            <option value="1">Administrador</option>
-                            <option value="2">Empleado</option>
-                            <option value="3">Cliente</option>
-                        </select></td>
-                                        <td>historial de ventas, catalogo, entradas y salidas domicilios</td>
-                                        <td>Activo</td>
-                                        <td><a href="#" class="icon-check"></a></td>
-                                    </tr>
-                        </div>
-                    </div>
-                </div>
+                                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                                aria-describedby="emailHelp" required="">
 
-                <!-- JavaScript Bundle with Popper -->
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-                    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-                    crossorigin="anonymous"></script>
-                <script src="assets/js/jquery-3.3.1.min.js"></script>
-                <script src="assets/js/jquery-ui.js"></script>
-                <script src="assets/js/popper.min.js"></script>
-                <script src="assets/js/bootstrap.min.js"></script>
-                <script src="assets/js/owl.carousel.min.js"></script>
-                <script src="assets/js/jquery.magnific-popup.min.js"></script>
-                <script src="assets/js/aos.js"></script>
+                                        </div>
+                                        <br>
+                                        <div class="multiselect">
+
+                                            <h2 class="h3 mb-7 text-black">Nuevo Permisos.</h2>
+                                            <div class="form-check" id="malquitos">
+                                                <label class="form-check-label" for="one" id="selecta">
+                                                    <br>
+                                                    <input type="checkbox" id="one" />ventas</label>
+                                                <br>
+                                                <label class="form-check-label" for="two" id="selecta">
+                                                    <br>
+                                                    <input type="checkbox" id="two" />pedidos</label>
+                                                <br>
+                                                <label class="form-check-label" for="three" id="selecta">
+                                                    <br>
+                                                    <input type="checkbox" id="three" />catalogo</label>
+                                                <br>
+                                                <label class="form-check-label" for="four" id="selecta">
+                                                    <br>
+                                                    <input type="checkbox" id="four" />domicilios</label>
+                                                <br>
+                                                <label class="form-check-label" for="five" id="selecta">
+                                                    <br>
+                                                    <input type="checkbox" id="five" />editar datos</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Cancelar</button>
+                                            <button type="button" class="btn btn-primary"
+                                                onclick="modificadoCorrectamente()">Guardar cambios</button>
+                                    </form>
+                                </div>
+
+                                <br>
+
+                                <!-- JavaScript Bundle with Popper -->
+                                <script
+                                    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+                                    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+                                    crossorigin="anonymous"></script>
+                                <script src="assets/js/jquery-3.3.1.min.js"></script>
+                                <script src="assets/js/jquery-ui.js"></script>
+                                <script src="assets/js/popper.min.js"></script>
+                                <script src="assets/js/bootstrap.min.js"></script>
+                                <script src="assets/js/owl.carousel.min.js"></script>
+                                <script src="assets/js/jquery.magnific-popup.min.js"></script>
+                                <script src="assets/js/aos.js"></script>
+                                <script src="assets/js/configvalida.js"></script>
+                                <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+                                </script>
+
+                                <script>
+
+                                    var expanded = false;
+
+                                    function showCheckboxes() {
+                                        var checkboxes = document.getElementById("checkboxes");
+                                        if (!expanded) {
+                                            checkboxes.style.display = "block";
+                                            expanded = true;
+                                        } else {
+                                            checkboxes.style.display = "none";
+                                            expanded = false;
+                                        }
+                                    }
+                                </Script>
 </body>
 
 </html>
