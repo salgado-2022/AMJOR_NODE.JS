@@ -116,6 +116,7 @@ let precioerror = document.getElementById("precioInsumoErr")
       nombrerror.style.display = 'block'
     }
   })
+  
   descripcion.addEventListener('input', function(e) {
     let pattern = /^[A-Za-z\s]+$/g
     let currentValue = e.target.value

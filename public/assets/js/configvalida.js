@@ -56,3 +56,17 @@ function confirmarEliminar() {
         }
     })
 }
+
+let rola = document.getElementById("exampleInputEmail1")
+let rolerror = document.getElementById("rolesError")
+rola.addEventListener('input', function(e) {
+    let pattern = /^[A-Za-z\s]+$/g
+    let currentValue = e.target.value
+    let valid = pattern.test(currentValue)
+    console.log (currentValue)
+    if(valid){
+        rolerror.style.display = 'none'
+    }else{
+        rolaErr.style.display = 'block'
+    }
+  })
